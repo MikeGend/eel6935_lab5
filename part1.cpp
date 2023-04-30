@@ -60,6 +60,11 @@ int main(int argc, char* argv[]) {
     });
 
     queue.wait();
+  }
+  catch (cl::sycl::exception& e) {
+    std::cout << e.what() << std::endl;
+    return 1;
+  }
 
     std::cout << "Operation complete:\n"
 	    << "[" << x_h[0] << "] + [" << y_h[0] << "] = [" << z_h[0] << "]\n"
@@ -75,11 +80,6 @@ int main(int argc, char* argv[]) {
     else {
       std::cout << "ERROR: Execution failed." << std::endl;
     }    
-  }
-  catch (cl::sycl::exception& e) {
-    std::cout << e.what() << std::endl;
-    return 1;
-  }
 
   return 0;
 }
