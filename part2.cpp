@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
 
 	  // TODO: Create a parallel_for to implement the first kernel.
     handler.parallel_for<class b_x_a_plus_c>(cl::sycl::range<1> { a_h.size() }, [=](cl::sycl::id<1> i) {
-        temp[i] = b * a[i] + c;
+        temp[i] = b * a_d[i] + c;
       }); });
 
     // Execute the second kernel.
@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
            if (temp[i] > 127)
             d_d[i] = 127;
           else if (temp[i] < -128)
-            d_d[i] = -128 
+            d_d[i] = -128;
           else
             d_d[i] = temp[i];
     }); });
