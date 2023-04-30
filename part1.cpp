@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
 	    << "[" << x_h[0] << "] + [" << y_h[0] << "] = [" << z_h[0] << "]\n"
 	    << "[" << x_h[1] << "] + [" << y_h[1] << "] = [" << z_h[1] << "]\n"
 	    << "...\n"
-	    << "[" << x_h[NUM_INPUTS - 1] << "] + [" << in2_h[NUM_INPUTS - 1] << "] = [" << z_h[NUM_INPUTS - 1] << "]\n"
+	    << "[" << x_h[NUM_INPUTS - 1] << "] + [" << y_h[NUM_INPUTS - 1] << "] = [" << z_h[NUM_INPUTS - 1] << "]\n"
 	    << std::endl;
 
     // Check for correctness.
