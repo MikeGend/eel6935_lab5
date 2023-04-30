@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
     cl::sycl::buffer<int, 1> y_buf {y_h.data(), cl::sycl::range<1>(y_h.size()) };
     cl::sycl::buffer<int, 1> z_buf {z_h.data(), cl::sycl::range<1>(z_h.size()) };
     
-    queue.submit([&](cl::sycl::handler& handler) {
+    queue.submit([&](cl::sycl::handler& handler) }
 
 	cl::sycl::accessor x_d(x_buf, handler, cl::sycl::read_only);
 	cl::sycl::accessor y_d(y_buf, handler, cl::sycl::write_only);
