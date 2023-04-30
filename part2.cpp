@@ -107,11 +107,11 @@ int main(int argc, char *argv[])
         // TODO: Create a parallel_for to implement the second kernel.
         handler.parallel_for<class clip>(cl::sycl::range<1> { a_h.size() }, [=](cl::sycl::id<1> i) {
            if (temp[i] > 127)
-            d[i] = 127;
+            d_d[i] = 127;
           else if (temp[i] < -128)
-            d[i] = -128 
+            d_d[i] = -128 
           else
-            d[i] = temp[i];
+            d_d[i] = temp[i];
     }); });
 
     queue_cpu.wait();
